@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Latin:</b>
+  <%= @taxa.latin %>
+</p>
+
+<p>
+  <b>Common:</b>
+  <%= @taxa.common %>
+</p>
+
+<%= link_to 'Edit', edit_taxa_path(@taxa) %> |
+<%= link_to 'Back', taxas_path %>
+
+<% unless @taxa.logs.empty? %>
+        <table class="logs" summary="Taxa Logs">
+          <%= render @logs %>
+        </table>
+      <% end %>
+
+

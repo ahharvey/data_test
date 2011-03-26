@@ -1,0 +1,19 @@
+<tr>
+	<th>Date</th>
+	<th>Site</th>
+	<th>Taxa</th>
+	<th>Weight</th>
+	<th>Length</th>
+	<th>Created</th>
+</tr>
+
+<% @logs.each do |l| %>
+<tr class="<%= cycle("even","odd") %>">		
+  	<td><%= l.date %></td>
+	<td><%= link_to l.site.name, l.site %></td>
+	<td><%= link_to l.taxa.latin, l.taxa %></td>
+	<td><%= l.weight %></td>
+	<td><%= l.length %></td>
+	<td><%= time_ago_in_words(l.created_at) %> ago.</td>
+</tr>
+<% end %>

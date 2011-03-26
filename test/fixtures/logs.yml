@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  taxa_id: 1
+  site_id: 1
+  date: 2011-03-26
+  weight: 1
+  length: 1
+  user_id: 1
+
+two:
+  taxa_id: 1
+  site_id: 1
+  date: 2011-03-26
+  weight: 1
+  length: 1
+  user_id: 1

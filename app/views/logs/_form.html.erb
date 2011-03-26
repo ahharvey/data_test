@@ -1,0 +1,48 @@
+<%= form_for(@log) do |f| %>
+  	<% if @log.errors.any? %>
+		<div id="error_explanation">
+	    	<h2><%= pluralize(@log.errors.count, "error") %> prohibited this log from being saved:</h2>
+
+	      	<ul>
+	      		<% @log.errors.full_messages.each do |msg| %>
+	        	<li><%= msg %></li>
+	      		<% end %>
+	      	</ul>
+	    </div>
+	<% end %>
+
+	<div class="field">
+	    <%= f.label :taxa_id %><br />
+	    <%= f.text_field :taxa_id %>
+	</div>
+	<div class="field">
+		<%= f.label :taxa_select %><br />
+	    <span class="content"><%= select(:log, :taxa_id, @taxas.collect {|t| [t.latin, t.id]})%></span>
+	<div>
+	<div class="field">
+	    <%= f.label :site_id %><br />
+	    <%= f.text_field :site_id %>
+	</div>
+	<div class="field">
+		<%= f.label :site_select %><br />
+		<span class="content"><%= select(:log, :site_id, @sites.collect {|s| [s.name, s.id]})%></span>
+	<div class="field">
+	    <%= f.label :date %><br />
+	    <%= f.date_select :date %>
+	</div>
+	<div class="field">
+	    <%= f.label :weight %><br />
+	    <%= f.text_field :weight %>
+	</div>
+	<div class="field">
+	    <%= f.label :length %><br />
+	    <%= f.text_field :length %>
+	</div>
+	<div class="field">
+	    <%= f.label :user_id %><br />
+	    <%= f.text_field :user_id %>
+	</div>
+	<div class="actions">
+	    <%= f.submit %>
+	</div>
+<% end %>

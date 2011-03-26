@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Taxa:</b>
+  <%= @log.taxa_id %>
+</p>
+
+<p>
+  <b>Site:</b>
+  <%= @log.site_id %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @log.date %>
+</p>
+
+<p>
+  <b>Weight:</b>
+  <%= @log.weight %>
+</p>
+
+<p>
+  <b>Length:</b>
+  <%= @log.length %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @log.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_log_path(@log) %> |
+<%= link_to 'Back', logs_path %>

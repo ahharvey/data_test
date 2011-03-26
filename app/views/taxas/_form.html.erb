@@ -1,0 +1,25 @@
+<%= form_for(@taxa) do |f| %>
+  <% if @taxa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@taxa.errors.count, "error") %> prohibited this taxa from being saved:</h2>
+
+      <ul>
+      <% @taxa.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :latin %><br />
+    <%= f.text_field :latin %>
+  </div>
+  <div class="field">
+    <%= f.label :common %><br />
+    <%= f.text_field :common %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

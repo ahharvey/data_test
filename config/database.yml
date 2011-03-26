@@ -3,7 +3,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: db/data_test
+  database: data_test
   pool: 5
   timeout: 5000
   username: admin
