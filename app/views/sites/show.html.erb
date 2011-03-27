@@ -5,7 +5,10 @@
 		<p>
 			<span class="data_value">
 				<%= range_field '#', 	:max=>'100', 
-										:min=>'-100', 
+										:min=>'-100' %>
+							
+										<% if false %><!-- start erb comment -->
+										, 
 										:onchange => showValue(this.value) %>
 					<span id="range">0</span>
 					<script type="text/javascript">
@@ -14,6 +17,7 @@
 								document.getElementById("range").innerHTML=newValue;
 							}
 					</script>
+					<!-- end erb comment --><% end %>
 				<%= @site.logs.average(:weight) %>
 			</span>
 		</p>
