@@ -1,22 +1,38 @@
-<p id="notice"><%= notice %></p>
+<%= link_to 'Back', users_path, :class => "back button round" %>
+<div class="panel round">
+	<div class="panel s_panel round admin">
+		<h3>Admin Controls</h3>
+		<p>
+		  <b>Scale this user:</b>
+		  <%= range_field '#', :max=>'100', :min=>'-100' %>
+		</p>
+	</div>
+	<h2><%= @user.name %></h2>
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @user.name %>
-</p>
+	<%= gravatar_for @user %>
+	<p>
+	  <b>Name:</b>
+	  <%= @user.name %>
+	</p>
 
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
+	<p>
+	  <b>Email:</b>
+	  <%= @user.email %>
+	</p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+	<%= link_to 'Edit', edit_user_path(@user) %>
+</div>
 
-<% unless @user.logs.empty? %>
-	<table class="logs" summary="User Logs">
-    	<%= render @logs %>
-    </table>
-<% end %>
+<div class="panel round">
+	<% if @user.logs.empty? %>
+		<%= render 'shared/nodata' %>
+	<% else %>
+		<h2>Fisheries log for <%= @user.name%></h2>
+		<%= render 'shared/log_table_header' %>
+	    <%= render @logs %>
+		<%= render 'shared/log_table_footer' %>
 
+	<% end %>
+</div>
 

@@ -14,7 +14,9 @@ class TaxasController < ApplicationController
   # GET /taxas/1.xml
   def show
     @taxa = Taxa.find(params[:id])
-    @logs = @taxa.logs.all
+    @logs = @taxa.logs.paginate(:page => params[:page])
+    @title = @taxa.latin
+    @parent_page = "Taxa"
 
     respond_to do |format|
       format.html # show.html.erb

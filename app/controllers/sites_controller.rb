@@ -14,7 +14,9 @@ class SitesController < ApplicationController
   # GET /sites/1.xml
   def show
     @site = Site.find(params[:id])
-    @logs = @site.logs.all
+    @logs = @site.logs.paginate(:page => params[:page])
+    @title = @site.name
+    @parent_page = "Site"
 
     respond_to do |format|
       format.html # show.html.erb

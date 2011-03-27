@@ -1,0 +1,43 @@
+<div id="new_log" class="h_form">
+	<h3>Add a new record</h3>
+	<%= form_for(@log) do |f| %>
+	  	<% if @log.errors.any? %>
+			<div id="error_explanation">
+		    	<h2><%= pluralize(@log.errors.count, "error") %> prohibited this log from being saved:</h2>
+
+		      	<ul>
+		      		<% @log.errors.full_messages.each do |msg| %>
+		        	<li><%= msg %></li>
+		      		<% end %>
+		      	</ul>
+		    </div>
+		<% end %>
+
+		<table class="data_entry">
+			<tr>
+				<th><%= f.label :date %></th>
+				<th><%= f.label :site_select %></th>
+				<th><%= f.label :taxa_select %></th>
+				<th><%= f.label :weight %></th>
+				<th><%= f.label :length %></th>
+				<th><%= f.label :user_id %></th>
+			</tr>
+			<tr>
+				<td><%= f.date_select :date %></td>
+				<td><%= f.select(:site_id, @sites.collect {|s| [s.name, s.id]})%></td>
+				<td><%= f.select(:taxa_id, @taxas.collect {|t| [t.latin, t.id]})%></td>
+				<td><%= f.number_field :weight, :max=>'999', :min=>'1' %></td>
+				<td><%= f.number_field :length, :max=>'999', :min=>'1' %></td>
+				<td><%= f.select(:user_id, @users.collect {|u| [u.name, u.id]})%></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td><%= f.submit %></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+	<% end %>
+</div>

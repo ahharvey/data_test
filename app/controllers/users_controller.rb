@@ -14,7 +14,9 @@ class UsersController < ApplicationController
   # GET /users/1.xml
   def show
     @user = User.find(params[:id])
-    @logs = @user.logs.all
+    @logs = @user.logs.paginate(:page => params[:page])
+    @title = @user.name
+    @parent_page = "User"
 
     respond_to do |format|
       format.html # show.html.erb

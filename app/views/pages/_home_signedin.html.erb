@@ -1,0 +1,24 @@
+<span class="code">------->[DISABLED BY ADMIN] ELSE IF USER IS 'SIGNED_IN' THEN SHOW 'USER_SECTION'.......</span>
+<h1>Fisheries Log</h1>
+<% if Log.find(:all).empty? %>
+	<span class="empty"><%= nodata %></span>
+<% else %>
+	
+	<%= render 'shared/form' %>
+	
+	<h3>All Records</h3>
+	<%= will_paginate @logs %>
+	<table class="logs" summary="User Logs">
+		<tr>
+			<th>Date</th>
+			<th>Site</th>
+			<th>Taxa</th>
+			<th>Weight</th>
+			<th>Length</th>
+			<th>Created</th>
+			<th>User</th>
+		</tr>
+    	<%= render @logs %>
+    </table>
+	<%= will_paginate @logs %>
+<% end %>

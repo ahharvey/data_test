@@ -1,19 +1,24 @@
-<tr>
-	<th>Date</th>
-	<th>Site</th>
-	<th>Taxa</th>
-	<th>Weight</th>
-	<th>Length</th>
-	<th>Created</th>
-</tr>
+	<tr class="<%= cycle("even","odd") %>">		
+  			<td><%= log.date %></td>
+		<% unless @parent_page == 'Site' %>
+			<td><%= link_to log.site.name, log.site %></td>
+		<% end %>
+		<% unless @parent_page == 'Taxa' %>
+			<td><%= link_to log.taxa.latin, log.taxa %></td>
+		<% end %>
+			<td><%= log.weight %></td>
+			<td><%= log.length %></td>
+			<td><%= time_ago_in_words(log.created_at) %> ago.</td>
+		<% unless @parent_page == 'User' %>
+			<td><%= link_to log.user.name, log.user %></td>
+		<% end %>
+		<% if @parent_page == 'Log' %>
+			<td><span class='controls'>
+				<%= link_to 'Show', log %> | 
+		    	<%= link_to 'Edit', edit_log_path(log) %> | 
+		    	<%= link_to 'Destroy', log, :confirm => 'Are you sure?', :method => :delete %>
+			<span></td>
+		<% end %>
+	</tr>
 
-<% @logs.each do |l| %>
-<tr class="<%= cycle("even","odd") %>">		
-  	<td><%= l.date %></td>
-	<td><%= link_to l.site.name, l.site %></td>
-	<td><%= link_to l.taxa.latin, l.taxa %></td>
-	<td><%= l.weight %></td>
-	<td><%= l.length %></td>
-	<td><%= time_ago_in_words(l.created_at) %> ago.</td>
-</tr>
-<% end %>
+

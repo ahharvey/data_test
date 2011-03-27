@@ -1,25 +1,24 @@
-<h1>Listing taxas</h1>
+<h1>All Fish</h1>
 
-<table>
+<table class="taxas">
   <tr>
-    <th>Latin</th>
-    <th>Common</th>
-    <th></th>
-    <th></th>
+    <th>Binomial name</th>
+    <th>Common name</th>
     <th></th>
   </tr>
 
 <% @taxas.each do |taxa| %>
   <tr>
-    <td><%= taxa.latin %></td>
+	<td><%= link_to taxa.latin, taxa %></td>
     <td><%= taxa.common %></td>
-    <td><%= link_to 'Show', taxa %> /</td>
-    <td><%= link_to 'Edit', edit_taxa_path(taxa) %> /</td>
-    <td><%= link_to 'Destroy', taxa, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><span class='controls'>
+    	<%= link_to 'Edit', edit_taxa_path(taxa) %> | 
+    	<%= link_to 'Destroy', taxa, :confirm => 'Are you sure?', :method => :delete %>
+	</span></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Taxa', new_taxa_path %>
+<%= link_to 'New Taxa', new_taxa_path, :class => "button round" %>

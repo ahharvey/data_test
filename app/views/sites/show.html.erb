@@ -1,22 +1,73 @@
-<p id="notice"><%= notice %></p>
+<%= link_to 'Back', sites_path, :class => "back round button" %>
+<div class="panel round">
+	<div class="panel s_panel round admin">
+		<h4>Admin Assumptions</h4>
+		<p>
+			<span class="data_value">
+				<%= range_field '#', 	:max=>'100', 
+										:min=>'-100', 
+										:onchange => showValue(this.value) %>
+					<span id="range">0</span>
+					<script type="text/javascript">
+						function showValue(newValue)
+							{
+								document.getElementById("range").innerHTML=newValue;
+							}
+					</script>
+				<%= @site.logs.average(:weight) %>
+			</span>
+		</p>
+		<p>
+			<span class="data_value"><%= range_field '#', :max=>'100', :min=>'-100' %>
+			<%= @site.logs.average(:length) %></span>
+		</p>
+		<p>
+			<span class="data_value"><%= range_field '#', :max=>'100', :min=>'-100' %></span>
+		</p>
+		<p>
+			<span class="data_value"><%= range_field '#', :max=>'100', :min=>'-100' %></span>
+		</p>
+	</div>
+	<div class="panel s_panel round data">
+		<h4>Calculated Averages</h4>
+		<p>
+			<span class="data_label">Weight:</span>
+			<span class="data_value"><%= @site.logs.average(:weight) %></span>
+		</p>
+		<p>
+		  	<span class="data_label">Length:</span>
+		  	<span class="data_value"><%= @site.logs.average(:length) %></span>
+		</p>
+		<p>
+			<span class="data_label">Hours Worked:</span>
+		</p>
+		<p>
+			<span class="data_label">CPUE:</span>
+		</p>
+	</div>
+	<h2><%= @site.name %></h2>
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @site.name %>
-</p>
+	<p>
+	  <b>Name:</b>
+	  <%= @site.name %>
+	</p>
 
-<p>
-  <b>Country:</b>
-  <%= @site.country %>
-</p>
+	<p>
+	  <b>Country:</b>
+	  <%= @site.country %>
+	</p>
 
-<%= link_to 'Edit', edit_site_path(@site) %> |
-<%= link_to 'Back', sites_path %>
-
-<% unless @site.logs.empty? %>
-        <table class="logs" summary="Site Logs">
-          <%= render @logs %>
-        </table>
-      <% end %>
-
+	<%= link_to 'Edit', edit_site_path(@site) %>
+</div>
+<div class="panel round">
+	<% if @site.logs.empty? %>
+		<%= render 'shared/nodata' %>
+	<% else %>
+		<h2>Fisheries log for <%= @site.name%></h2>
+		<%= render 'shared/log_table_header' %>
+    	<%= render @logs %>
+		<%= render 'shared/log_table_footer' %>
+	<% end %>
+</div>
 

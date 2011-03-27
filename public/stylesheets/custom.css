@@ -1,0 +1,303 @@
+/*********
+TYPOGRAPHY
+*********/
+
+/* Development */
+
+.code {
+	font-family:courier;
+	font-size:12px;
+	line-height:52px;
+}
+
+/* Links */
+
+a {
+  color: #09c;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #069;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #069;
+}
+
+/* System Messages */
+
+.nodata {
+	font-family:Georgia, Arial;
+	font-size:12px;
+	font-weight:bold;
+}
+
+/* Body */
+
+.s_panel p {
+	margin:0;
+	line-height:32px;
+}
+
+.data_label {
+	font-size:10px;
+	font-weight:bold;
+}
+
+.data_value {
+	font-size:16px;
+}
+
+/*********
+SIDE-WIDE LAYOUT
+*********/
+.container {
+  width: ;
+}
+
+body {
+  background: ;
+}
+
+header {
+  padding-top: 20px;
+}
+
+header img {
+  padding: 1em;
+  background: ;
+}
+
+section {
+  margin-top: 1em;
+  font-size: 120%;
+  padding: 20px;
+  background: ;
+}
+
+section h1 {
+  font-size: 200%;
+}
+
+/*********
+SITE-WIDE STYLED ELEMENTS
+*********/
+
+/* Clear */
+
+.clear {
+	clear:both;
+}
+
+/* Round corners */
+
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
+
+/* Buttons */
+
+.button {
+	background:#e5ecf9;
+	border:#09c 2px solid;
+	padding:5px;
+	font-weight:bold;
+	color:#09c;
+}
+
+.button:hover {
+	background:#09c;
+	border:#e5ecf9 2px solid;
+	color:#e5ecf9;
+}
+
+/* Navigation */
+
+nav {
+  float: right;
+}
+
+nav {
+  background-color: #e5ecf9;
+  border:#09c 2px solid;
+  padding: 0.4em 0.7em;
+  margin-left: 15px;
+  white-space: nowrap;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0.2em 0;
+}
+
+nav ul li a {
+  padding: 0 5px;
+  font-weight: bold;
+}
+
+nav ul li a:visited {
+  color: #09c;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+nav#user {
+	border:#c50 2px solid;
+	background:#F4ECE4;
+	color:#F4ECE4;
+}
+
+nav#user  a{
+	color:#c50;
+}
+
+/*********
+BODY
+*********/
+
+/* Show */
+
+.panel {
+	background: ;
+	border: #09c 2px solid;
+	margin:20px 0;
+	padding:20px;
+}
+
+.s_panel {
+	float:right;
+	width:200px;
+	margin:0 0 0 10px;
+}
+
+.s_panel table {
+	font-size:10px;
+}
+
+.data {
+	background:#f4ece4;
+	border:#c50 2px solid;
+}
+.admin {
+	background:#e5ecf9;
+}
+
+/* Data entry tables */
+
+table.data_entry {
+	border:#c50 1px solid;
+}
+
+table.data_entry th {
+	background:#c50;
+	color:#fff;
+}
+
+table.data_entry td {
+	background:#F4ECE4!important;
+}
+
+input.number {
+	width:100px;
+}
+
+/* Index tables */
+
+table.logs,
+table.users,
+table.sites,
+table.taxas {
+	border:#09c 1px solid;
+	font-size:12px;
+}
+
+table.logs th,
+table.users th,
+table.sites th,
+table.taxas th {
+	background:#09c;
+	color:#fff;
+}
+
+.controls {
+	font-size:0.6em;
+}
+
+/*********
+FOOTER
+*********/
+
+/* Navigation */
+
+footer {
+  text-align: center;
+  margin-top: 10px;
+  width: 710px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer nav {
+  float: none;
+}
+
+/*********
+FRONT PAGE
+*********/
+
+/* Sign in button */
+
+a.signin_button {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+  width: 190px;
+  color: #006400;
+  background: #99CCCC;
+  border: #006400 2px solid;
+  font-size: 150%;
+  font-weight: bold;
+  padding: 20px;
+}
+
+a.signin_button:hover {
+	color: #99CCCC;
+	background: #006400;
+	border: #99CCCC 2px solid;
+
+	
+}
+/* Sign up button */
+
+a.signup_button {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+  width: 190px;
+  color: #09c;
+  background: #e5ecf9;
+  border: #09c 2px solid;
+  font-size: 150%;
+  font-weight: bold;
+  padding: 20px;
+}
+
+a.signup_button:hover {
+	color: #e5ecf9;
+  	background: #09c;
+  	border: #e5ecf9 2px solid;
+}

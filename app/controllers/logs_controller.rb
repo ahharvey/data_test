@@ -2,7 +2,8 @@ class LogsController < ApplicationController
   # GET /logs
   # GET /logs.xml
   def index
-    @logs = Log.all
+    @logs = Log.paginate(:page => params[:page])
+    @parent_page = "Log"
 
     respond_to do |format|
       format.html # index.html.erb

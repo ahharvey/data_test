@@ -11,32 +11,26 @@
 	    </div>
 	<% end %>
 
-	<div class="field">
-	    <%= f.label :taxa_id %><br />
-	    <%= f.text_field :taxa_id %>
-	</div>
-	<div class="field">
-		<%= f.label :taxa_select %><br />
-	    <span class="content"><%= select(:log, :taxa_id, @taxas.collect {|t| [t.latin, t.id]})%></span>
-	<div>
-	<div class="field">
-	    <%= f.label :site_id %><br />
-	    <%= f.text_field :site_id %>
-	</div>
-	<div class="field">
-		<%= f.label :site_select %><br />
-		<span class="content"><%= select(:log, :site_id, @sites.collect {|s| [s.name, s.id]})%></span>
+
 	<div class="field">
 	    <%= f.label :date %><br />
 	    <%= f.date_select :date %>
 	</div>
 	<div class="field">
+		<%= f.label :site %><br />
+		<span class="content"><%= select(:log, :site_id, @sites.collect {|s| [s.name, s.id]})%></span>
+	</div>
+	<div class="field">
+		<%= f.label :taxa %><br />
+	    <span class="content"><%= select(:log, :taxa_id, @taxas.collect {|t| [t.latin, t.id]})%></span>
+	<div>
+	<div class="field">
 	    <%= f.label :weight %><br />
-	    <%= f.text_field :weight %>
+	    <%= f.number_field :weight, :max=>'999', :min=>'1' %>
 	</div>
 	<div class="field">
 	    <%= f.label :length %><br />
-	    <%= f.text_field :length %>
+	    <%= f.number_field :length, :max=>'999', :min=>'1' %>
 	</div>
 	<div class="field">
 	    <%= f.label :user_id %><br />

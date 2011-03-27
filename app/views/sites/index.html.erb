@@ -1,25 +1,24 @@
-<h1>Listing sites</h1>
+<h1>All Sites</h1>
 
-<table>
+<table class="sites">
   <tr>
     <th>Name</th>
     <th>Country</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
 <% @sites.each do |site| %>
   <tr>
-    <td><%= site.name %></td>
+	<td><%= link_to site.name, site %></td>
     <td><%= site.country %></td>
-    <td><%= link_to 'Show', site %> /</td>
-    <td><%= link_to 'Edit', edit_site_path(site) %> /</td>
-    <td><%= link_to 'Destroy', site, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><span class='controls'>
+    	<%= link_to 'Edit', edit_site_path(site) %> | 
+    	<%= link_to 'Destroy', site, :confirm => 'Are you sure?', :method => :delete %>
+	</span></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Site', new_site_path %>
+<%= link_to 'New Site', new_site_path, :class => "button round" %>

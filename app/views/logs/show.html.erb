@@ -1,35 +1,39 @@
-<p id="notice"><%= notice %></p>
+<%= link_to 'Back', logs_path, :class => "back button round" %>
+<div class="panel round">
 
-<p>
-  <b>Taxa:</b>
-  <%= @log.taxa_id %>
-</p>
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Site:</b>
-  <%= @log.site_id %>
-</p>
+	<p>
+	  <b>Date:</b>
+	  <%= @log.date %>
+	</p>
+	
+	<p>
+	  <b>Site:</b>
+	  <%= link_to @log.site.name, @log.site %>
+	</p>
+	
+	<p>
+	  <b>Taxa:</b>
+	  <%= link_to @log.taxa.latin, @log.taxa %>
+	</p>
 
-<p>
-  <b>Date:</b>
-  <%= @log.date %>
-</p>
+	<p>
+	  <b>Weight:</b>
+	  <%= @log.weight %>
+	</p>
 
-<p>
-  <b>Weight:</b>
-  <%= @log.weight %>
-</p>
+	<p>
+	  <b>Length:</b>
+	  <%= @log.length %>
+	</p>
 
-<p>
-  <b>Length:</b>
-  <%= @log.length %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @log.user_id %>
-</p>
+	<p>
+	  <b>User:</b>
+	  <%= link_to @log.user.name, @log.user %>
+	</p>
 
 
-<%= link_to 'Edit', edit_log_path(@log) %> |
-<%= link_to 'Back', logs_path %>
+	<%= link_to 'Edit', edit_log_path(@log) %>
+</div>
+
